@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import BookingModal from '../BookingModal';
+import BookingModal from '../../BookingModal';
 import BnrBackground from '../../assets/ortho.svg';
 
 
