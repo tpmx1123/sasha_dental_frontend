@@ -81,7 +81,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/Restorationsimagemobile.png"
+            src="/OrthodonticSolutions.png"
             alt="Orthodontic Solutions"
             className="w-full h-full object-cover"
           />

@@ -195,7 +195,7 @@ export default function OurClient() {
         >
           <motion.button 
             className="py-2.5 px-7 rounded-lg font-semibold text-sm md:text-[17px]" 
-            style={{backgroundColor: '#0267AC', color: '#FCC17F'}}
+            style={{backgroundColor: '#0267AC', color: '#fff'}}
             whileHover={{ scale: 1.05, boxShadow: "0px 8px 20px rgba(2, 103, 172, 0.4)" }}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.2 }}

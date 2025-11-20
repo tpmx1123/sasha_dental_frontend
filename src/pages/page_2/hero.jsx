@@ -86,7 +86,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/Restorationsimagemobile.png"
+            src="/DentalCrowns.png"
             alt="Dental Restorations & Fillings"
             className="w-full h-full object-cover"
           />
@@ -150,7 +150,7 @@ const HeroSection = () => {
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/2"></div>
         
-        <div className="relative mx-auto px-2 lg:ml-10 md:px-6 lg:px-12 py-11 md:py-20 lg:py-32 md:min-h-screen flex flex-row items-center">
+        <div className="relative mx-auto px-2 lg:ml-15 md:px-6 lg:px-12 py-11 md:py-20 lg:py-32 md:min-h-screen flex flex-row items-center">
           
           {/* Left Side Content */}
           <motion.div 

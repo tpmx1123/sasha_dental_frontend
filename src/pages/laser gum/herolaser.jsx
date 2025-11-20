@@ -82,7 +82,7 @@ export default function HeroLaser() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/Restorationsimagemobile.png"
+            src="/LaserGumTreatments.png"
             alt="Dental Restorations & Fillings"
             className="w-full h-full object-cover"
           />

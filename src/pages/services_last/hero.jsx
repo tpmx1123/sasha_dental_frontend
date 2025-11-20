@@ -77,7 +77,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/Restorationsimagemobile.png"
+            src="/TeethWhitening.png"
             alt="Teeth Whitening"
             className="w-full h-full object-cover"
           />

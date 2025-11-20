@@ -79,7 +79,7 @@ export default function ToothTop() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/Restorationsimagemobile.png"
+            src="/ToothSpecificMinorSurgicalCare.png"
             alt="Tooth-Specific Minor Surgical Care"
             className="w-full h-full object-cover"
           />

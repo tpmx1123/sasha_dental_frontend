@@ -220,7 +220,7 @@ export default function OurClient() {
         >
           <motion.button 
             className="py-2 md:py-2.5 px-5 md:px-7 rounded-lg font-semibold transition-colors hover:opacity-90 text-sm md:text-base" 
-            style={{backgroundColor: '#0267AC', color: '#FCC17F'}}
+            style={{backgroundColor: '#0267AC', color: '#fff'}}
             whileHover="hover"
             whileTap="tap"
           >

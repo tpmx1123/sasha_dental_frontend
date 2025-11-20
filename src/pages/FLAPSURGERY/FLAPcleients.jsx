@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import styled from "styled-components";
 
 const FLAPcleients = () => {
   const testimonials = [
@@ -28,6 +27,30 @@ const FLAPcleients = () => {
     },
   };
 
+  const headingVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -40,398 +63,222 @@ const FLAPcleients = () => {
     },
   };
 
+  const videoVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    },
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.2,
+      },
+    },
+    tap: {
+      scale: 0.95,
+    },
+  };
+
   return (
-    <Wrapper>
-      <MainContainer>
+    <div className="bg-white">
+      <div
+        className="w-full min-h-[552px] rounded-lg flex flex-col justify-start items-center relative p-10 md:p-16 overflow-hidden"
+        style={{
+          background: "linear-gradient(90deg, #F1F9FD 0%, #FFFFFF 550%)",
+          borderRadius: "7.48px",
+        }}
+      >
         {/* Heading */}
-        <MotionHeading
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <motion.h2
+          className="font-bold mb-2 text-left w-full max-w-[1108px] font-montserrat"
+          style={{
+            fontSize: "clamp(24px, 4vw, 32.93px)",
+            lineHeight: "clamp(36px, 6vw, 49.4px)",
+            color: "#0267AC",
+          }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          variants={headingVariants}
         >
           Our Clients Love
-        </MotionHeading>
+        </motion.h2>
 
         {/* Paragraph */}
-        <MotionParagraph
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <motion.p
+          className="w-full max-w-[1107.69px] text-left mb-6 md:mb-8 px-2 md:px-0 font-montserrat"
+          style={{
+            fontSize: "clamp(14px, 2.5vw, 17.96px)",
+            lineHeight: "clamp(22px, 4vw, 29.94px)",
+            color: "#392D44",
+          }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          variants={textVariants}
         >
           Some best words from our beloved clients. It's always encouraging to
           know that our clients loved our services as it keeps us going even
           more enthusiastically.
-        </MotionParagraph>
+        </motion.p>
 
         {/* Main Section */}
-        <MainSection
+        <motion.div
+          className="flex flex-wrap justify-between items-start w-full max-w-[1108.12px] gap-5 md:gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {/* Left: Testimonials */}
-          <TestimonialsContainer>
-            <TestimonialsGrid>
+          <div className="flex flex-col gap-5 w-full max-w-[605px] flex-[1_1_100%]">
+            <div className="flex flex-wrap gap-3 md:gap-4 w-full justify-center">
               {testimonials.map((testimonial) => (
-                <MotionTestimonialCard
+                <motion.div
                   key={testimonial.id}
+                  className="w-full max-w-[294px] min-h-[210px] bg-white rounded-xl shadow-md p-4 md:p-5 flex flex-col justify-between box-border relative flex-[1_1_280px]"
+                  style={{
+                    boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+                  }}
                   variants={itemVariants}
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 >
                   {testimonial.hasOpeningQuote && (
-                    <OpeningQuote
+                    <img
                       src="/firstquote.svg"
                       alt="opening quote"
+                      className="absolute w-[52px] h-[39px] md:w-[65.52px] md:h-[49.35px] -top-5 md:-top-6 left-3 opacity-100"
                     />
                   )}
-                  <StarsIcon src="/stars.svg" alt="stars" />
-                  <TestimonialText>{testimonial.text}</TestimonialText>
-                  <TestimonialName>{testimonial.name}</TestimonialName>
-                </MotionTestimonialCard>
+                  <img
+                    src="/stars.svg"
+                    alt="stars"
+                    className="w-[70px] h-[14px] md:w-[80px] md:h-[16px] mt-6 md:mt-8 mb-2 self-start"
+                  />
+                  <p
+                    className="font-montserrat mb-5 md:mb-7 text-justify"
+                    style={{
+                      fontSize: "clamp(9px, 1.5vw, 10px)",
+                      lineHeight: "clamp(16px, 2.5vw, 19px)",
+                      color: "#392D44",
+                    }}
+                  >
+                    {testimonial.text}
+                  </p>
+                  <strong
+                    className="font-montserrat font-bold self-start"
+                    style={{
+                      fontSize: "clamp(10px, 1.5vw, 11px)",
+                      color: "#392D44",
+                    }}
+                  >
+                    {testimonial.name}
+                  </strong>
+                </motion.div>
               ))}
-            </TestimonialsGrid>
+            </div>
             {/* Desktop-aligned button, directly under testimonials */}
-            <DesktopButton
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+            <motion.button
+              className="hidden md:block mt-7 w-[136.19px] h-[45.39px] rounded-lg font-roboto font-medium cursor-pointer self-start"
+              style={{
+                backgroundColor: "#0267AC",
+                color: "#FFFFFF",
+                borderRadius: "7.48px",
+                fontSize: "clamp(18px, 2.5vw, 22.94px)",
+                lineHeight: "30.59px",
+              }}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
             >
               Click More
-            </DesktopButton>
-          </TestimonialsContainer>
-          
+            </motion.button>
+          </div>
+
           {/* Right: Video/Image Section */}
-          <MotionVideoContainer
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+          <motion.div
+            className="w-full max-w-[446.08px] h-[200px] md:h-[270px] rounded-xl overflow-visible relative flex-[1_1_400px] mx-auto shadow-md"
+            style={{
+              boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+            }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            variants={videoVariants}
           >
-            <VideoImage src="/ourclient.svg" alt="Client Video" />
-            <PlayButton
+            <img
+              src="/ourclient.svg"
+              alt="Client Video"
+              className="w-full h-full object-cover rounded-xl"
+            />
+            <motion.div
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center cursor-pointer"
+              style={{ backgroundColor: "#F3B81F" }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <PlayTriangle />
-            </PlayButton>
-            <ClosingQuote src="/quotes.svg" alt="closing quote" />
-          </MotionVideoContainer>
-        </MainSection>
-        
+              <div
+                className="ml-1 md:ml-1"
+                style={{
+                  width: 0,
+                  height: 0,
+                  borderLeft: "10px solid white",
+                  borderTop: "6px solid transparent",
+                  borderBottom: "6px solid transparent",
+                }}
+              />
+            </motion.div>
+            <img
+              src="/quotes.svg"
+              alt="closing quote"
+              className="absolute w-[50px] h-[38px] md:w-[63.33px] md:h-[47.7px] -bottom-4 md:-bottom-5 right-2.5 opacity-100"
+            />
+          </motion.div>
+        </motion.div>
+
         {/* Mobile: button at bottom, centered */}
-        <MobileButton
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <motion.button
+          className="block md:hidden mt-8 w-[136.19px] h-[45.39px] rounded-lg font-roboto font-medium cursor-pointer self-center"
+          style={{
+            backgroundColor: "#0267AC",
+            color: "#FFFFFF",
+            borderRadius: "7.48px",
+            fontSize: "clamp(18px, 2.5vw, 22.94px)",
+            lineHeight: "30.59px",
+          }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          variants={buttonVariants}
+          whileHover="hover"
+          whileTap="tap"
         >
           Click More
-        </MobileButton>
-      </MainContainer>
-      <Spacer />
-    </Wrapper>
+        </motion.button>
+      </div>
+      <div className="h-[60px] md:h-20 bg-white w-full" />
+    </div>
   );
 };
-
-/* Styled Components */
-const Wrapper = styled.div`
-  background-color: #FFFFFF;
-`;
-
-const MainContainer = styled.div`
-  width: 100%;
-  min-height: 552px;
-  background: linear-gradient(90deg, #F1F9FD 0%, #FFFFFF 550%);
-  border-radius: 7.48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-  padding: 40px 16px;
-  box-sizing: border-box;
-  overflow: hidden;
-
-  @media (min-width: 768px) {
-    padding: 60px 16px;
-  }
-`;
-
-const MotionHeading = motion(styled.h2`
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  font-size: clamp(24px, 4vw, 32.93px);
-  line-height: clamp(36px, 6vw, 49.4px);
-  color: #0267AC;
-  margin: 0 0 8px 0;
-  width: 100%;
-  max-width: 1108px;
-
-  @media (min-width: 768px) {
-    text-align: left;
-  }
-`);
-
-const MotionParagraph = motion(styled.p`
-  width: 100%;
-  max-width: 1107.69px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: clamp(14px, 2.5vw, 17.96px);
-  line-height: clamp(22px, 4vw, 29.94px);
-  color: #392D44;
-  margin: 0 0 24px 0;
-  padding: 0 8px;
-
-  @media (min-width: 768px) {
-    text-align: left;
-    margin: 0 0 32px 0;
-    padding: 0;
-  }
-`);
-
-const MainSection = motion(styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 1108.12px;
-  gap: 20px;
-
-  @media (min-width: 768px) {
-    gap: 24px;
-  }
-`);
-
-const TestimonialsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  max-width: 605px;
-  flex: 1 1 100%;
-`;
-
-const TestimonialsGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  width: 100%;
-  justify-content: center;
-
-  @media (min-width: 768px) {
-    gap: 16px;
-  }
-`;
-
-const MotionTestimonialCard = motion(styled.div`
-  width: 100%;
-  max-width: 294px;
-  min-height: 210px;
-  height: auto;
-  background-color: #FFFFFF;
-  border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-  position: relative;
-  flex: 1 1 280px;
-
-  @media (min-width: 768px) {
-    padding: 20px;
-    height: 210px;
-  }
-`);
-
-const OpeningQuote = styled.img`
-  position: absolute;
-  width: 52px;
-  height: 39px;
-  top: -20px;
-  left: 12px;
-  opacity: 1;
-
-  @media (min-width: 768px) {
-    width: 65.52px;
-    height: 49.35px;
-    top: -25px;
-  }
-`;
-
-const StarsIcon = styled.img`
-  width: 70px;
-  height: 14px;
-  margin-top: 24px;
-  margin-bottom: 6px;
-  align-self: flex-start;
-
-  @media (min-width: 768px) {
-    width: 80px;
-    height: 16px;
-    margin-top: 30px;
-    margin-bottom: 8px;
-  }
-`;
-
-const TestimonialText = styled.p`
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(9px, 1.5vw, 10px);
-  line-height: clamp(16px, 2.5vw, 19px);
-  color: #392D44;
-  margin: 0 0 20px 0;
-  text-align: justify;
-
-  @media (min-width: 768px) {
-    margin: 0 0 27px 0;
-  }
-`;
-
-const TestimonialName = styled.strong`
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  font-size: clamp(10px, 1.5vw, 11px);
-  color: #392D44;
-  align-self: flex-start;
-`;
-
-const DesktopButton = motion(styled.button`
-  margin-top: 24px;
-  width: 136.19px;
-  height: 45.39px;
-  background-color: #0267AC;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 7.48px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: clamp(18px, 2.5vw, 22.94px);
-  line-height: 30.59px;
-  cursor: pointer;
-  align-self: flex-start;
-  display: none;
-
-  @media (min-width: 601px) {
-    display: block;
-    margin-top: 28px;
-  }
-`);
-
-const MobileButton = motion(styled.button`
-  margin-top: 32px;
-  width: 136.19px;
-  height: 45.39px;
-  background-color: #0267AC;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 7.48px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: clamp(18px, 2.5vw, 22.94px);
-  line-height: 30.59px;
-  cursor: pointer;
-  align-self: center;
-  display: block;
-
-  @media (min-width: 601px) {
-    display: none;
-  }
-`);
-
-const MotionVideoContainer = motion(styled.div`
-  width: 100%;
-  max-width: 446.08px;
-  height: 200px;
-  border-radius: 12px;
-  overflow: visible;
-  position: relative;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  flex: 1 1 400px;
-  margin: 0 auto;
-
-  @media (min-width: 768px) {
-    height: 270px;
-  }
-`);
-
-const VideoImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-`;
-
-const PlayButton = motion(styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
-  background-color: #F3B81F;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-
-  @media (min-width: 768px) {
-    width: 50px;
-    height: 50px;
-  }
-`);
-
-const PlayTriangle = styled.div`
-  width: 0;
-  height: 0;
-  border-left: 10px solid white;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  margin-left: 3px;
-
-  @media (min-width: 768px) {
-    border-left: 12px solid white;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    margin-left: 4px;
-  }
-`;
-
-const ClosingQuote = styled.img`
-  position: absolute;
-  width: 50px;
-  height: 38px;
-  bottom: -16px;
-  right: 10px;
-  transform: rotate(0deg);
-  opacity: 1;
-
-  @media (min-width: 768px) {
-    width: 63.33px;
-    height: 47.7px;
-    bottom: -20px;
-  }
-`;
-
-const Spacer = styled.div`
-  height: 60px;
-  background-color: #FFFFFF;
-  width: 100%;
-
-  @media (min-width: 768px) {
-    height: 80px;
-  }
-`;
 
 export default FLAPcleients;

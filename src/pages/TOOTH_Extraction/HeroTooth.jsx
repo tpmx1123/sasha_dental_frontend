@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
@@ -78,7 +70,7 @@ export default function HeroTooth() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/Restorationsimagemobile.png"
+            src="/ToothExtractions.png"
             alt="Tooth Extractions"
             className="w-full h-full object-cover"
           />

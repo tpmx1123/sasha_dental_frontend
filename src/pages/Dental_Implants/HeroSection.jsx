@@ -87,7 +87,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/Restorationsimagemobile.png"
+            src="/DentalImplants.png"
             alt="Dental Implants"
             className="w-full h-full object-cover"
           />
