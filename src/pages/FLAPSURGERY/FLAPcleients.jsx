@@ -194,25 +194,6 @@ const FLAPcleients = () => {
                 </motion.div>
               ))}
             </div>
-            {/* Desktop-aligned button, directly under testimonials */}
-            <motion.button
-              className="hidden md:block mt-7 w-[136.19px] h-[45.39px] rounded-lg font-roboto font-medium cursor-pointer self-start"
-              style={{
-                backgroundColor: "#0267AC",
-                color: "#FFFFFF",
-                borderRadius: "7.48px",
-                fontSize: "clamp(18px, 2.5vw, 22.94px)",
-                lineHeight: "30.59px",
-              }}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={buttonVariants}
-              whileHover="hover"
-              whileTap="tap"
-            >
-              Click More
-            </motion.button>
           </div>
 
           {/* Right: Video/Image Section */}
@@ -255,26 +236,6 @@ const FLAPcleients = () => {
             />
           </motion.div>
         </motion.div>
-
-        {/* Mobile: button at bottom, centered */}
-        <motion.button
-          className="block md:hidden mt-8 w-[136.19px] h-[45.39px] rounded-lg font-roboto font-medium cursor-pointer self-center"
-          style={{
-            backgroundColor: "#0267AC",
-            color: "#FFFFFF",
-            borderRadius: "7.48px",
-            fontSize: "clamp(18px, 2.5vw, 22.94px)",
-            lineHeight: "30.59px",
-          }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={buttonVariants}
-          whileHover="hover"
-          whileTap="tap"
-        >
-          Click More
-        </motion.button>
       </div>
       <div className="h-[60px] md:h-20 bg-white w-full" />
     </div>

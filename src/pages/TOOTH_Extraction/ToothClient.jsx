@@ -202,28 +202,6 @@ const Clients = () => {
                 </strong>
               </motion.div>
             </div>
-
-            {/* Button placed below the testimonials - Desktop only */}
-            <div className="hidden md:block">
-              <motion.button
-                className="mt-7 w-[136.19px] h-[45.39px] rounded-lg font-roboto font-medium cursor-pointer self-start"
-                style={{
-                  backgroundColor: "#0267AC",
-                  color: "#FFFFFF",
-                  borderRadius: "7.48px",
-                  fontSize: "clamp(16px, 3vw, 22.94px)",
-                  lineHeight: "clamp(22px, 4vw, 30.59px)",
-                }}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={buttonVariants}
-                whileHover="hover"
-                whileTap="tap"
-              >
-                Click More
-              </motion.button>
-            </div>
           </div>
 
           {/* Right: Video/Image Section */}
@@ -261,27 +239,6 @@ const Clients = () => {
               />
             </motion.div>
 
-            {/* Button placed after video/image - Mobile only */}
-            <div className="flex justify-start mt-6 w-full md:hidden">
-              <motion.button
-                className="w-[120px] h-[40px] rounded-lg font-roboto font-medium cursor-pointer self-center"
-                style={{
-                  backgroundColor: "#0267AC",
-                  color: "#FFFFFF",
-                  borderRadius: "7.48px",
-                  fontSize: "clamp(16px, 3vw, 22.94px)",
-                  lineHeight: "clamp(22px, 4vw, 30.59px)",
-                }}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={buttonVariants}
-                whileHover="hover"
-                whileTap="tap"
-              >
-                Click More
-              </motion.button>
-            </div>
           </div>
         </motion.div>
       </div>

@@ -210,27 +210,6 @@ const OurClientsLove = () => {
                 </strong>
               </div>
             </div>
-
-            {/* Click More Button */}
-            <button
-              style={{
-                marginTop: "10px",
-                alignSelf: "flex-start",
-                width: "136.19px",
-                height: "45.39px",
-                backgroundColor: "#0267AC",
-                color: "#FFFFFF",
-                border: "none",
-                borderRadius: "7.48px",
-                fontFamily: "Roboto, sans-serif",
-                fontWeight: 500,
-                fontSize: "22.94px",
-                lineHeight: "30.59px",
-                cursor: "pointer",
-              }}
-            >
-              Click More
-            </button>
           </div>
 
           {/* Right: SVG / Video Box */}

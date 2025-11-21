@@ -9,9 +9,9 @@ const AboutSasha = () => {
   // Image carousel for mobile
   const mobileImages = [
     '/aboutimg1.png',
-    '/aboutimg2.svg',
-    '/aboutimg3.svg',
-    '/aboutimg4.svg'
+    '/aboutimg2.png',
+    '/aboutimg3.png',
+    '/aboutimg4.png'
   ]
 
   // Auto-rotate carousel
@@ -58,7 +58,7 @@ const AboutSasha = () => {
                 viewport={{ once: true }} 
                 transition={{ duration: 0.45, delay: 0.1 }}
               >
-                <span className="block text-sm font-bold mb-0.5 mt-5" style={{ color: '#4D4D4D' }}>About</span>
+                <span className="block text-sm font-bold mb-0.5 mt-10" style={{ color: '#4D4D4D' }}>About</span>
                 <span className="block text-lg font-black leading-tight" style={{ color: '#0267AC' }}>Sasha Smiles</span>
               </motion.h1>
             </div>
@@ -74,8 +74,8 @@ const AboutSasha = () => {
               viewport={{ once: true }} 
               transition={{ duration: 0.45, delay: 0.15 }}
             >
-              <h2 className="text-[10px] font-bold mb-1.5 font-sans leading-tight" style={{ color: '#FF6633' }}>Our Vision</h2>
-              <div className="text-[8px] leading-[1.35] font-sans" style={{ color: '#0267AC' }}>
+              <h2 className="text-[12px] font-bold mb-1.5 font-sans leading-tight" style={{ color: '#FF6633' }}>Our Vision</h2>
+              <div className="text-[10px] leading-[1.35] font-sans" style={{ color: '#0267AC' }}>
                 <p className="mb-1 italic">
                   Your smile is personal—and so is our approach.
                 </p>

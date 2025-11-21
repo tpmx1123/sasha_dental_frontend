@@ -158,10 +158,6 @@ const FrequentlyAskedQuestions = () => {
               </AnimatePresence>
             </MotionCard>
           ))}
-
-          <MotionReadMore variants={readMoreVariants}>
-            <ReadMore>Read More →</ReadMore>
-          </MotionReadMore>
         </FAQContainer>
       </ContentWrapper>
     </MainContainer>

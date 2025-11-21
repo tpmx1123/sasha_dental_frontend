@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import RestoreComport from "../../components/assets/Tooth/Restore Comfort.svg";
+import BookingModal from "../../components/BookingModal";
 
 export default function Ready() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="-mt-5 py-0 md:py-16 px-4 flex justify-center">
       <div className="w-full max-w-[1150px]">
@@ -32,6 +35,7 @@ patient comfort </strong> as top priorities.
               <button 
                 className="bg-white text-[#0267AC] font-bold rounded-xl hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 shadow-lg text-[6px] md:text-lg lg:text-[25px] px-2 py-1 md:px-6 md:py-3 lg:px-7 lg:py-[18px]"
                 style={{letterSpacing: '1px'}}
+                onClick={() => setIsModalOpen(true)}
               >
                 Book Your Consultation
               </button>
@@ -42,6 +46,13 @@ patient comfort </strong> as top priorities.
           </div>
         </div>
       </div>
+      
+      {/* Booking Modal */}
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)}
+        serviceName="Minor Surgical Procedures"
+      />
     </div>
   );
 }

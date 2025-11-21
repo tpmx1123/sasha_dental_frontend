@@ -215,25 +215,6 @@ export default function Clients() {
             </div>
           </motion.div>
         </motion.div>
-
-        {/* Click More Button */}
-        <motion.div 
-          className="flex mt-8 md:mt-0"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1, margin: "-50px" }}
-          variants={buttonVariants}
-        >
-          <motion.button 
-            className="py-2.5 px-7 rounded-lg font-semibold text-sm md:text-[17px]" 
-            style={{backgroundColor: '#0267AC', color: '#fff'}}
-            whileHover={{ scale: 1.05, boxShadow: "0px 8px 20px rgba(2, 103, 172, 0.4)" }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-          >
-            Click More
-          </motion.button>
-        </motion.div>
       </div>
     </div>
   );

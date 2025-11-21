@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from 'framer-motion';
 import FrameBanner from "../../assets/design the smile.svg";
+import BookingModal from "../../BookingModal";
 
 // Animation Variants
 const containerVariants = {
@@ -51,6 +52,8 @@ const buttonVariants = {
 };
 
 export default function Ready() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="-mt-4 lg:-ml-16 py-0 md:py-16 px-4 flex justify-center">
       <div className="w-full max-w-[1150px]">
@@ -91,11 +94,11 @@ health. Let us help you choose the right treatment for
 your lifestyle and goals.
               </motion.p>
               <motion.button 
-             
                 className="bg-white text-[#0267AC] font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg text-[9px] md:text-lg lg:text-[24px] px-2 py-1 md:px-6 md:py-3 lg:px-7 lg:py-[18px]"
                 variants={buttonVariants}
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0,0,0,0.2)" }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setIsModalOpen(true)}
               >
                 Book Your Consultation
               </motion.button>
@@ -106,7 +109,13 @@ your lifestyle and goals.
           </div>
         </motion.div>
       </div>
+      
+      {/* Booking Modal */}
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)}
+        serviceName="Orthodontic Care"
+      />
     </div>
-    
   );
 }

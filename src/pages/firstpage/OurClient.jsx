@@ -209,24 +209,6 @@ export default function OurClient() {
             </div>
           </motion.div>
         </motion.div>
-
-        {/* Click More Button */}
-        <motion.div 
-          className="flex mt-6 md:mt-8"
-          variants={buttonVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <motion.button 
-            className="py-2 md:py-2.5 px-5 md:px-7 rounded-lg font-semibold transition-colors hover:opacity-90 text-sm md:text-base" 
-            style={{backgroundColor: '#0267AC', color: '#fff'}}
-            whileHover="hover"
-            whileTap="tap"
-          >
-            Click More
-          </motion.button>
-        </motion.div>
       </div>
     </div>
   );

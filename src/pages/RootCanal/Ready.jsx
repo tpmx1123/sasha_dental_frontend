@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import RootCanalsReady from "../../components/assets/RootCanal/Ready to Relieve.svg";
+import BookingModal from "../../components/BookingModal";
 
 // Animation Variants
 const containerVariants = {
@@ -51,6 +52,8 @@ const buttonVariants = {
 };
 
 export default function Ready() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="-mt-4 py-0 md:py-16 px-4 flex justify-center">
       <div className="w-full max-w-[1150px]">
@@ -95,6 +98,7 @@ and confidence safely and effectively.
                 variants={buttonVariants}
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0,0,0,0.2)" }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setIsModalOpen(true)}
               >
                 Book Your Consultation
               </motion.button>
@@ -105,6 +109,13 @@ and confidence safely and effectively.
           </div>
         </motion.div>
       </div>
+      
+      {/* Booking Modal */}
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)}
+        serviceName="Root Canal Treatment"
+      />
     </div>
   );
 }

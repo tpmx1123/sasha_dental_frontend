@@ -146,15 +146,6 @@ const FrequentlyAskedQuestions = () => {
               </AnimatePresence>
             </Card>
           ))}
-
-          <MotionReadMore
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={readMoreVariants}
-          >
-            Read More →
-          </MotionReadMore>
         </CardsContainer>
       </ContentWrapper>
     </Wrapper>

@@ -185,26 +185,6 @@ const OurClientsLove = () => {
                 </motion.div>
               ))}
             </div>
-
-            {/* Desktop-Only Button */}
-            <motion.button
-              className="hidden md:block mt-4 w-[136.19px] h-[45.39px] rounded-lg font-roboto font-medium cursor-pointer text-left"
-              style={{
-                backgroundColor: "#0267AC",
-                color: "#FFFFFF",
-                borderRadius: "7.48px",
-                fontSize: "22.94px",
-                lineHeight: "30.59px",
-              }}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={buttonVariants}
-              whileHover="hover"
-              whileTap="tap"
-            >
-              Click More
-            </motion.button>
           </div>
 
           {/* Right Side Video */}
@@ -239,26 +219,6 @@ const OurClientsLove = () => {
             />
           </motion.div>
         </motion.div>
-
-        {/* Mobile Button */}
-        <motion.button
-          className="block md:hidden mt-6 w-[90%] max-w-[150px] h-[45px] rounded-lg font-roboto font-medium cursor-pointer text-center self-start"
-          style={{
-            backgroundColor: "#0267AC",
-            color: "#FFFFFF",
-            borderRadius: "7.48px",
-            fontSize: "clamp(18px, 4.5vw, 22.94px)",
-            lineHeight: "30.59px",
-          }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={buttonVariants}
-          whileHover="hover"
-          whileTap="tap"
-        >
-          Click More
-        </motion.button>
       </motion.div>
     </div>
   );

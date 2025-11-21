@@ -216,16 +216,6 @@ const FlapAskedQuestions = () => {
               cursor: "pointer",
             }}
           >
-            <span
-              style={{
-                fontFamily: "Roboto, sans-serif",
-                fontWeight: 500,
-                fontSize: "clamp(18px, 2vw, 22.94px)",
-                color: "#0267AC",
-              }}
-            >
-              Read More →
-            </span>
           </motion.div>
         </motion.div>
       </div>

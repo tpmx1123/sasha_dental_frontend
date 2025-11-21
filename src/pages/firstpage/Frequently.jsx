@@ -174,21 +174,6 @@ export default function Frequently() {
                 </div>
               </motion.div>
             ))}
-
-            <motion.div 
-              className="mt-6 md:mt-10"
-              variants={linkVariants}
-            >
-              <motion.a 
-                href="#" 
-                className="inline-flex text-blue-600 hover:text-blue-800 font-bold transition-colors text-base md:text-2xl"
-                style={{letterSpacing: '0.5px'}}
-                whileHover="hover"
-              >
-                Read More
-                <span className="ml-2 text-2xl md:text-4xl">→</span>
-              </motion.a>
-            </motion.div>
           </motion.div>
           
         </motion.div>

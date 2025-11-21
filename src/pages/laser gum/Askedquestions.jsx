@@ -277,19 +277,6 @@ const Askedquestions = () => {
             }}
             variants={readMoreVariants}
           >
-            <motion.span
-              style={{
-                fontFamily: "Roboto, sans-serif",
-                fontWeight: 500,
-                fontSize: "22.94px",
-                color: "#0267AC",
-                cursor: "pointer",
-              }}
-              whileHover={{ color: "#0056a3", x: 5 }}
-              transition={{ duration: 0.2 }}
-            >
-              Read More →
-            </motion.span>
           </motion.div>
         </motion.div>
       </div>

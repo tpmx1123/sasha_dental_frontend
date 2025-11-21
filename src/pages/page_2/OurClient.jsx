@@ -145,24 +145,6 @@ export default function OurClient() {
             
           </motion.div>
         </div>
-
-        {/* Click More Button */}
-        <motion.div 
-          className="flex justify-center md:justify-start mt-8 md:mt-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <motion.button 
-            className="py-2.5 px-7 rounded-lg font-semibold transition-colors hover:opacity-90" 
-            style={{backgroundColor: '#0267AC', fontSize: 'clamp(15px, 2.2vw, 17px)', color: '#FFFFFF'}}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Click More
-          </motion.button>
-        </motion.div>
       </div>
     </div>
   );

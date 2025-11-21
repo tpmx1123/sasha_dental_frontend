@@ -192,22 +192,6 @@ export default function Frequently() {
                 </div>
               </motion.div>
             ))}
-
-            <motion.div 
-              className="mt-6 md:mt-10"
-              variants={readMoreVariants}
-            >
-              <motion.a 
-                href="#" 
-                className="inline-flex text-blue-600 font-bold text-base md:text-xl lg:text-[24px]" 
-                style={{letterSpacing: '0.5px'}}
-                whileHover={{ color: '#0056a3', x: 5 }}
-                transition={{ duration: 0.2 }}
-              >
-                Read More
-                <span className="ml-2 text-2xl md:text-3xl lg:text-4xl">→</span>
-              </motion.a>
-            </motion.div>
           </motion.div>
           
         </div>
