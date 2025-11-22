@@ -32,14 +32,16 @@ const SecretDashboard = () => {
   // Modal state
   const [showChangePasswordModal, setShowChangePasswordModal] = useState(false)
 
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+  const API_URL = import.meta.env.VITE_API_URL || 'https://sashasmiles.com/api'
   
   // Helper function to get image URL
   const getImageUrl = (imagePath) => {
     if (!imagePath) return null
-    // If imagePath already starts with http, return as is
-    if (imagePath.startsWith('http')) return imagePath
-    // Get base URL from API_URL (remove /api)
+    // If imagePath already starts with http/https (Cloudinary or external URL), return as is
+    if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
+      return imagePath
+    }
+    // For local paths, get base URL from API_URL (remove /api)
     const baseUrl = API_URL.replace('/api', '')
     return `${baseUrl}${imagePath}`
   }
@@ -662,9 +664,11 @@ const BlogModal = ({ isOpen, onClose, blog, API_URL }) => {
   // Helper function to get image URL
   const getImageUrl = (imagePath) => {
     if (!imagePath) return null
-    // If imagePath already starts with http, return as is
-    if (imagePath.startsWith('http')) return imagePath
-    // Get base URL from API_URL (remove /api)
+    // If imagePath already starts with http/https (Cloudinary or external URL), return as is
+    if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
+      return imagePath
+    }
+    // For local paths, get base URL from API_URL (remove /api)
     const baseUrl = API_URL.replace('/api', '')
     return `${baseUrl}${imagePath}`
   }

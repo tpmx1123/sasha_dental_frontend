@@ -88,15 +88,15 @@ const Contact = () => {
       content: 'Sasha Clinics, Kavuri Hills, Madhapur',
       subContent: 'Hyderabad, Telangana',
       color: 'text-[#0067AC]',
-      link: 'https://www.google.com/maps?q=Sasha+Clinics+Kavuri+Hills+Madhapur+Hyderabad+Telangana'
+      link: 'https://maps.app.goo.gl/vxJx4UsrGY5v55ZVA'
     },
     {
       icon: Phone,
       title: 'Phone',
-      content: '+1 (555) 123-4567',
+      content: '+91 9154129964',
       subContent: 'Mon-Fri 9am-6pm',
       color: 'text-[#FF642F]',
-      link: 'tel:+15551234567'
+      link: 'tel:+919154129964'
     },
     {
       icon: Mail,

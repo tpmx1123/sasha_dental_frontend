@@ -95,7 +95,7 @@ export default function RootTop() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/Restorationsimagemobile.png"
+            src="/rootcancel.png"
             alt="Root Canal"
             className="w-full h-full object-cover"
           />

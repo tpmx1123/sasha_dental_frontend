@@ -82,7 +82,7 @@ export default function FlapHero() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/Restorationsimagemobile.png"
+            src="/flapmoblie.png"
             alt="Flap Surgery"
             className="w-full h-full object-cover"
           />
