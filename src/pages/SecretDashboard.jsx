@@ -33,6 +33,16 @@ const SecretDashboard = () => {
   const [showChangePasswordModal, setShowChangePasswordModal] = useState(false)
 
   const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+  
+  // Helper function to get image URL
+  const getImageUrl = (imagePath) => {
+    if (!imagePath) return null
+    // If imagePath already starts with http, return as is
+    if (imagePath.startsWith('http')) return imagePath
+    // Get base URL from API_URL (remove /api)
+    const baseUrl = API_URL.replace('/api', '')
+    return `${baseUrl}${imagePath}`
+  }
 
   useEffect(() => {
     if (activeTab === 'appointments') {
@@ -542,7 +552,7 @@ const SecretDashboard = () => {
                             <td className="px-6 py-4 whitespace-nowrap">
                               {blog.featuredImage ? (
                                 <img
-                                  src={`http://localhost:5000${blog.featuredImage}`}
+                                  src={getImageUrl(blog.featuredImage)}
                                   alt={blog.title}
                                   className="w-16 h-16 object-cover rounded"
                                 />
@@ -649,6 +659,16 @@ const SecretDashboard = () => {
 
 // Blog Modal Component
 const BlogModal = ({ isOpen, onClose, blog, API_URL }) => {
+  // Helper function to get image URL
+  const getImageUrl = (imagePath) => {
+    if (!imagePath) return null
+    // If imagePath already starts with http, return as is
+    if (imagePath.startsWith('http')) return imagePath
+    // Get base URL from API_URL (remove /api)
+    const baseUrl = API_URL.replace('/api', '')
+    return `${baseUrl}${imagePath}`
+  }
+  
   const [formData, setFormData] = useState({
     title: '',
     excerpt: '',
@@ -677,7 +697,7 @@ const BlogModal = ({ isOpen, onClose, blog, API_URL }) => {
         metaKeywords: Array.isArray(blog.metaKeywords) ? blog.metaKeywords.join(', ') : ''
       })
       if (blog.featuredImage) {
-        setImagePreview(`http://localhost:5000${blog.featuredImage}`)
+        setImagePreview(getImageUrl(blog.featuredImage))
       }
     } else {
       // Reset form for new blog

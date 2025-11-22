@@ -18,6 +18,16 @@ const Blogs = () => {
   const [totalPages, setTotalPages] = useState(1)
 
   const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+  
+  // Helper function to get image URL
+  const getImageUrl = (imagePath) => {
+    if (!imagePath) return null
+    // If imagePath already starts with http, return as is
+    if (imagePath.startsWith('http')) return imagePath
+    // Get base URL from API_URL (remove /api)
+    const baseUrl = API_URL.replace('/api', '')
+    return `${baseUrl}${imagePath}`
+  }
 
   useEffect(() => {
     fetchBlogs()
@@ -202,7 +212,7 @@ const Blogs = () => {
                     <div className="relative h-48 sm:h-56 overflow-hidden bg-gradient-to-br from-[#0067AC] to-[#005a94]">
                       {blog.featuredImage ? (
                         <img
-                          src={`http://localhost:5000${blog.featuredImage}`}
+                          src={getImageUrl(blog.featuredImage)}
                           alt={blog.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
