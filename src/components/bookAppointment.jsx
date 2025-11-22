@@ -17,7 +17,7 @@ const BookAppointment = () => {
   const [error, setError] = useState('')
 
   // API URL from .env file (VITE_API_URL) or default to localhost
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+  const API_URL = import.meta.env.VITE_API_URL || 'https://sashasmiles.com/api'
 
   // Generate time slots from 9am to 9pm
   const generateTimeSlots = () => {
